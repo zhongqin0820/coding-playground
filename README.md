@@ -9,6 +9,7 @@
 # 参考资料
 ## go
 - [x] [go指南](http://tour.studygolang.com/list)
+- [ ] [go web](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/preface.md)
 - [ ] [go编程入门-极客学院](http://wiki.jikexueyuan.com/project/the-way-to-go/preface.html)
 - [ ] [go语言教程](http://www.runoob.com/go/go-tutorial.html)
 - [ ] [学习Go语言]()

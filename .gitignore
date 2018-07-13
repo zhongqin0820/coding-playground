@@ -1,3 +1,4 @@
 .idea
-/python/xgboost/tap4fun.zip
-/python/xgboost/tap4fun_data/*
+# ignore tap4fun dataset
+# /python/xgboost/tap4fun.zip
+/python/game_predict/tap4fun_data/*

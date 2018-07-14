@@ -1,4 +1,4 @@
-# !/usr/bin/python
+# !/usr/bin/python3
 
 def loadfmap(fname):
     fmap = {}
@@ -66,6 +66,32 @@ def mknfold(fname='agaricus.txt', k=1, nfold=5):
     ftr.close()
     fte.close()
 
+def train():
+    import numpy as np
+    import scipy.sparse
+    import pickle
+    import xgboost as xgb
+    # initialization
+    #  load dataset
+    dtrain = xgb.DMatrix('agaricus.txt.train')
+    dtest = xgb.DMatrix('agaricus.txt.test')
+    # initialize parameter of xgboost
+    params = {'max_depth':2, 'eta':1, 'silent':1, 'objective':'binary:logistic'}
+    # specify validation set to watch performance
+    watchlist = {(dtest, 'eval'), (dtrain, 'train')}
+    num_round = 2
+    
+    # training
+    bst = xgb.train(params, dtrain, num_round, watchlist)
+
+    # testing
+    preds = bst.predict(dtest)
+    labels = dtest.get_label()
+    print('error=%f' % ( sum(1 for i in range(len(preds)) if int(preds[i]>0.5) != labels[i])/float(len(preds))) )
+    bst.save_model('0001.model')
+
 if __name__ == '__main__':
-    # mapfeat()
-    mknfold()
+    # mapfeat() # mapping feature and data into libSVM format
+    # mknfold() # spliting data into train and test
+    train()
+    pass

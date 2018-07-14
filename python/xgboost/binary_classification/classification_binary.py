@@ -31,7 +31,7 @@ def mapfeat():
     fo = open('featmap.txt', 'w')
     write_nmap(fo, nmap)
     fo.close()
-    # 
+    # write data
     fo = open('agaricus.txt', 'w')
     for l in open('agaricus-lepiota.data'):
         arr = l.split(',')
@@ -44,6 +44,28 @@ def mapfeat():
             fo.write(' %d:1' % fmap[i][arr[i].strip()])
         fo.write('\n')
     fo.close()
+    return 'agaricus.txt'
+
+def mknfold(fname='agaricus.txt', k=1, nfold=5):
+    '''
+    1st arg: dataset filename [agaricus.txt]
+    2nd arg: k fold num used in tset [k = 1]
+    3rd arg: nfold num [nfold = 5]
+    '''
+    import random
+    random.seed(10)
+    fi = open(fname, 'r')
+    ftr = open(fname+'.train', 'w')
+    fte = open(fname+'.test', 'w')
+    for l in fi:
+        if random.randint(1, nfold) == k:
+            fte.write(l)
+        else:
+            ftr.write(l)
+    fi.close()
+    ftr.close()
+    fte.close()
 
 if __name__ == '__main__':
-    mapfeat()
+    # mapfeat()
+    mknfold()

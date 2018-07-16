@@ -91,16 +91,22 @@ def train():
 def tune():
     # import matplotlib.pyplot as plt
     import xgboost as xgb
+    import matplotlib.pyplot as plt
+    from xgboost import plot_importance
+    from xgboost import plot_tree
     bst = xgb.Booster(model_file='0001.model')
-    dtest = xgb.DMatrix('agaricus.txt.test')
-    bst.predict(dtest)
-    # cann't use this plotting API
+    # dtest = xgb.DMatrix('agaricus.txt.test')
+    # bst.predict(dtest)
+    # plot training model
+    plot_importance(bst)
+    plot_tree(bst)
+    plt.show()
     # print(type(xgb.plot_importance(bst))) 
     # print(type(xgb.plot_tree(bst, num_tree=2)))
     # xgb.plot_tree(bst, num_tree=1)
     # plt.show(xgb.plot_tree(bst, num_tree=2))
-    bst.dump_model('dump.raw.txt')
-    bst.dump_model('dump.nice.txt','featmap.txt')
+    # bst.dump_model('dump.raw.txt')
+    # bst.dump_model('dump.nice.txt','featmap.txt')
     return
 
 if __name__ == '__main__':

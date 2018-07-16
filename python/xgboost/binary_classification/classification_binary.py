@@ -89,9 +89,23 @@ def train():
     labels = dtest.get_label()
     print('error=%f' % ( sum(1 for i in range(len(preds)) if int(preds[i]>0.5) != labels[i])/float(len(preds))) )
     bst.save_model('0001.model')
+    return
+
+def tune():
+    import numpy as np
+    import scipy.sparse
+    import pickle
+    import xgboost as xgb
+    bst = xgb.Booster(model_file='0001.model')
+    dtest = xgb.DMatrix('agaricus.txt.test')
+    bst.predict(dtest)
+    bst.dump_model('dump.raw.txt')
+    bst.dump_model('dump.nice.txt','featmap.txt')
+    return
 
 if __name__ == '__main__':
     # mapfeat() # mapping feature and data into libSVM format
     # mknfold() # spliting data into train and test
-    train()
+    # train()
+    tune()
     pass

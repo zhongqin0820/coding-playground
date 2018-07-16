@@ -92,13 +92,16 @@ def train():
     return
 
 def tune():
-    import numpy as np
-    import scipy.sparse
-    import pickle
+    # import matplotlib.pyplot as plt
     import xgboost as xgb
     bst = xgb.Booster(model_file='0001.model')
     dtest = xgb.DMatrix('agaricus.txt.test')
     bst.predict(dtest)
+    # cann't use this plotting API
+    # print(type(xgb.plot_importance(bst))) 
+    # print(type(xgb.plot_tree(bst, num_tree=2)))
+    # xgb.plot_tree(bst, num_tree=1)
+    # plt.show(xgb.plot_tree(bst, num_tree=2))
     bst.dump_model('dump.raw.txt')
     bst.dump_model('dump.nice.txt','featmap.txt')
     return

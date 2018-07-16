@@ -2,3 +2,4 @@
 # ignore tap4fun dataset
 # /python/xgboost/tap4fun.zip
 /python/game_predict/tap4fun_data/*
+/python/game_predict/game.txt*

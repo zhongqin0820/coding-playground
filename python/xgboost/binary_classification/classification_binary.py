@@ -67,9 +67,6 @@ def mknfold(fname='agaricus.txt', k=1, nfold=5):
     fte.close()
 
 def train():
-    import numpy as np
-    import scipy.sparse
-    import pickle
     import xgboost as xgb
     # initialization
     #  load dataset

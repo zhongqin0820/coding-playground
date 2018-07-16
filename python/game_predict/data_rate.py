@@ -142,6 +142,29 @@ def data_clean():
     print('{}:{}'.format(count_online_zero, count_online_notzero))
     return
 
+def count_class():
+    i = 0
+    labelMap = {}
+    sum_zero7 = 0
+    for line in sys.stdin:
+        i += 1
+        line = line.strip('\n')
+        if i == 1:
+            continue
+        data = line.split(',')
+        data_3 = float(data[-3])#day7
+        data_key = data[-1]
+        if labelMap.has_key(data_key):
+            if data_3 == 0.0:
+                if data_key != '0.0':
+                    sum_zero7 += 1
+            labelMap[data_key] += 1
+        else:
+            labelMap[data_key] = 1
+    print(len(labelMap))
+    print(sum_zero7)
+    return
 if __name__ == '__main__':
     # data_rate()
-    data_clean()
+    # data_clean()
+    count_class()

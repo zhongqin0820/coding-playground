@@ -7,3 +7,11 @@
 - [ ] [Multi-Class Classification](https://github.com/dmlc/xgboost/tree/master/demo/multiclass_classification)
 - [ ] [Regression](https://github.com/dmlc/xgboost/tree/master/demo/regression)
 - [ ] [Ranking](https://github.com/dmlc/xgboost/tree/master/demo/rank)
+
+# 使用xgboost的plotting API
+需要安装一些相关包
+```bash
+sudo apt-get install python-tk # or python3-tk
+sudo apt-get install graphviz
+pip install python-tk graphviz # python3 uses pip3 to install
+```

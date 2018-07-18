@@ -13,8 +13,10 @@
 - [ ] [学习Go语言]()
 - [x] [go指南](http://tour.studygolang.com/list)
 - [x] [go web](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/preface.md)
+- [x] [GO命令教程-极客学院](http://wiki.jikexueyuan.com/project/go-command-tutorial/)
 
 ## python
+- [ ] [Python进阶](https://github.com/eastlakeside/interpy-zh/blob/master/SUMMARY.md)
 - [ ] [Python 3 教程](http://www.runoob.com/python3/python3-tutorial.html)
 - [x] [廖雪峰Python3教程](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
 - [x] [Python 基础教程](http://www.runoob.com/python/python-tutorial.html)

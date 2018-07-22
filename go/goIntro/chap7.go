@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
+	myexp "github.com/zhongqin0820/coding-playground/go/goIntro/myPack"
 	"log"
 	"strings"
 )
@@ -24,8 +25,14 @@ func exp2() {
 	log.Printf("%q %q", s1, s2)
 }
 
+func exp3() {
+	myexp.Hi()
+	log.Println(myexp.MyPackA)
+}
+
 func main() {
 	// exp1()
-	exp2()
+	// exp2()
+	exp3()
 	fmt.Println("...")
 }

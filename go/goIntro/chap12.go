@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"crypto/sha1"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -97,6 +98,23 @@ func exp6() {
 	return
 }
 
+// encode and decode
+func exp7() {
+	hasher := sha1.New()
+	io.WriteString(hasher, "test")
+	b := []byte{}
+	log.Printf("%x\n", hasher.Sum(b))
+	log.Printf("%d\n", hasher.Sum(b))
+	hasher.Reset()
+	data := []byte("We shall overcome!")
+	n, err := hasher.Write(data)
+	if n != len(data) || err != nil {
+		log.Println(n, err)
+	}
+	checkSum := hasher.Sum(b)
+	log.Printf("%x\n", checkSum)
+}
+
 func main() {
 	// exp1()
 	// exp2()
@@ -104,6 +122,6 @@ func main() {
 	// exp4()
 	// exp5()
 	// exp6()
-
+	exp7()
 	fmt.Println("...")
 }

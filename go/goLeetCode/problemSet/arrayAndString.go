@@ -1,7 +1,7 @@
-package main
+package problemSet
 
 import (
-	"fmt"
+	// "fmt"
 	"log"
 )
 
@@ -46,7 +46,7 @@ func spiralOrder(matrix [][]int) []int {
 	return Res
 }
 
-func main() {
-	exp2()
-	fmt.Println("...")
-}
+// func main1() {
+// 	exp2()
+// 	fmt.Println("...")
+// }

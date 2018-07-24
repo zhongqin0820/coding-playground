@@ -1,4 +1,4 @@
-package main
+package contestSet
 
 import (
 	// "container/list"
@@ -50,7 +50,7 @@ func lenLongestFibSubseq(A []int) int {
 	return 0
 }
 
-func main() {
+func main2() {
 	prob873()
 	fmt.Println("...")
 }

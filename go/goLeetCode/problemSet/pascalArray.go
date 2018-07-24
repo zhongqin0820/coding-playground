@@ -1,4 +1,4 @@
-package main
+package problemSet
 
 import (
 	"log"
@@ -25,7 +25,7 @@ func generate(numRows int) [][]int {
 	return res
 }
 
-func main() {
-	Res := generate(5)
-	log.Println(Res)
-}
+// func main3() {
+// 	Res := generate(5)
+// 	log.Println(Res)
+// }

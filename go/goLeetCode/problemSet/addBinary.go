@@ -29,7 +29,6 @@ func AddBinary(a string, b string) string {
 			res = append(res, '1')
 		} else if tempA[i] != tempB[j] && carry == true {
 			res = append(res, '0')
-			carry = false
 		}
 	}
 	log.Printf("carry is : %t, i is : %d, j is : %d", carry, i, j)

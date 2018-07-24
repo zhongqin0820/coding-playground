@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	res := p.AddBinary("1", "11")
+	res := p.AddBinary("110010", "10111")
 	log.Printf("%q\n", res)
 }

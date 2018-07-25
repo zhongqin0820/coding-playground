@@ -8,12 +8,14 @@
 
 # 参考资料
 ## go
-- [ ] [go编程入门-极客学院](http://wiki.jikexueyuan.com/project/the-way-to-go/preface.html)
+- [ ] [《通过测试驱动开发学习 Go 语言》](https://github.com/studygolang/learn-go-with-tests)
 - [ ] [go语言教程](http://www.runoob.com/go/go-tutorial.html)
 - [ ] [学习Go语言]()
 - [x] [go指南](http://tour.studygolang.com/list)
 - [x] [go web](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/preface.md)
 - [x] [GO命令教程-极客学院](http://wiki.jikexueyuan.com/project/go-command-tutorial/)
+- [x] [go编程入门-极客学院](http://wiki.jikexueyuan.com/project/the-way-to-go/preface.html)
+- [x] [Go语言博客实践](https://github.com/achun/Go-Blog-In-Action)
 
 ## python
 - [ ] [Python进阶](https://github.com/eastlakeside/interpy-zh/blob/master/SUMMARY.md)

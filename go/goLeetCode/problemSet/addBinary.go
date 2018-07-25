@@ -4,7 +4,7 @@ import (
 	"log"
 )
 
-func AddBinary(a string, b string) string {
+func addBinary(a string, b string) string {
 	lenA, lenB := len(a), len(b)
 	if lenA == 0 {
 		return b

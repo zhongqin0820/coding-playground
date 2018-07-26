@@ -11,7 +11,17 @@ def reverseWords(s):
         i, j = i+1, j-1
     return ' '.join(data)
 
+class Solution(object):
+    def reverseWords(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return ' '.join([d[::-1] for d in s.split(' ') if d!=''])
 if __name__ == '__main__':
-    print(reverseWords("the sky is blue"))
-    print(reverseWords("    the sky is blue   "))
-    print(reverseWords("s     a"))
+    s = Solution()
+    print(s.reverseWords('the sky is blue'))#eht yks si eulb
+    print(s.reverseWords('Let\'s take LeetCode contest'))#s'teL ekat edoCteeL tsetnoc
+    # print(reverseWords("the sky is blue"))
+    # print(reverseWords("    the sky is blue   "))
+    # print(reverseWords("s     a"))

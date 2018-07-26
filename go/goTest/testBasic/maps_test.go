@@ -1,4 +1,4 @@
-package goTest
+package testBasic
 
 import (
 	"testing"

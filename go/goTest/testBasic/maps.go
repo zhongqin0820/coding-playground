@@ -1,4 +1,4 @@
-package goTest
+package testBasic
 
 type Dictionay map[string]string
 

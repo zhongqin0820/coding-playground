@@ -1,4 +1,4 @@
-package goTest
+package testBasic
 
 // add sum of an integer array
 func Sum(in []int) (res int) {

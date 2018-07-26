@@ -1,4 +1,4 @@
-package goTest
+package testBasic
 
 func Repeat(ch string, ind int) (res string) {
 	var b []byte

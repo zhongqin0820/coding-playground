@@ -55,6 +55,21 @@ func removeElement(nums []int, val int) int {
 	return len(nums)
 }
 
+func findMaxConsecutiveOnes(nums []int) int {
+	nums = append([]int{0}, nums...)
+	nums = append(nums, 0)
+	max, j := 0, 0
+	for i, v := range nums {
+		if v == 0 && i-j > max {
+			max = i - j - 1
+		}
+		if v == 0 {
+			j = i
+		}
+	}
+	return max
+}
+
 func main() {
 	// res := p.AddBinary("110010", "10111")
 	// res := p.StrStr("hello", "ll")
@@ -64,7 +79,12 @@ func main() {
 	// res := twoSum([]int{2, 3, 4, 5, 11, 17, 19}, 16)
 	// res := twoSum([]int{5, 25, 75}, 100)
 	// res := removeElement([]int{3, 2, 2, 3, 5, 6, 2, 5}, 2)
-	res := removeElement([]int{3, 2, 2, 3, 5, 6, 2, 5}, 1)
+	// res := removeElement([]int{3, 2, 2, 3, 5, 6, 2, 5}, 1)
 	// res := removeElement([]int{}, 2)
+	// res := findMaxConsecutiveOnes([]int{1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0})
+	// res := findMaxConsecutiveOnes([]int{1, 1, 0, 1, 1, 1})
+	// res := findMaxConsecutiveOnes([]int{0, 0, 0, 0, 1, 1, 0, 1, 1, 1})
+	// res := findMaxConsecutiveOnes([]int{0, 0, 0, 0})
+	res := findMaxConsecutiveOnes([]int{1, 1, 1, 1, 1})
 	log.Printf("%d\n", res)
 }

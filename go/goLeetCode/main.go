@@ -70,6 +70,58 @@ func findMaxConsecutiveOnes(nums []int) int {
 	return max
 }
 
+func minSubArrayLen(s int, nums []int) int {
+	sum, i, j, min := 0, 0, 0, len(nums)+1
+	if min == 1 {
+		return 0
+	}
+	for _, v := range nums {
+		sum += v
+		j++
+		for sum >= s {
+			if j-i < min {
+				min = j - i
+			}
+			sum -= nums[i]
+			i++
+		}
+	}
+	if min == len(nums)+1 {
+		return 0
+	}
+	return min
+}
+
+func rotate(nums []int, k int) {
+	if len(nums) == 0 {
+		return
+	}
+	k = k % len(nums)
+	copy(nums, append(nums[len(nums)-k:], nums[:len(nums)-k]...))
+	log.Println(nums)
+}
+
+func getRow(rowIndex int) []int {
+	if rowIndex < 0 {
+		return []int{}
+	} else {
+		rowIndex++
+	}
+	front, res := []int{1}, []int{}
+	for i := 1; i < rowIndex; i++ {
+		for j := 0; j <= i; j++ {
+			if j == 0 || j == i {
+				res = append(res, 1)
+			} else {
+				res = append(res, front[j-1]+front[j])
+			}
+		}
+		front = res
+		res = []int{}
+	}
+	return front
+}
+
 func main() {
 	// res := p.AddBinary("110010", "10111")
 	// res := p.StrStr("hello", "ll")
@@ -85,6 +137,18 @@ func main() {
 	// res := findMaxConsecutiveOnes([]int{1, 1, 0, 1, 1, 1})
 	// res := findMaxConsecutiveOnes([]int{0, 0, 0, 0, 1, 1, 0, 1, 1, 1})
 	// res := findMaxConsecutiveOnes([]int{0, 0, 0, 0})
-	res := findMaxConsecutiveOnes([]int{1, 1, 1, 1, 1})
+	// res := findMaxConsecutiveOnes([]int{1, 1, 1, 1, 1})
+	// res := minSubArrayLen(7, []int{2, 3, 1, 2, 4, 3})
+	// rotate([]int{2, 3, 1, 2, 4, 3}, 1)
+	// rotate([]int{1, 2, 3, 4, 5, 6, 7}, 10)
+	// res := getRow(0)
+	// res := getRow(1)
+	// log.Printf("%d\n", res)
+	// res = getRow(2)
+	// log.Printf("%d\n", res)
+	// res = getRow(3)
+	// log.Printf("%d\n", res)
+	// res = getRow(4)
+	res := getRow(33)
 	log.Printf("%d\n", res)
 }

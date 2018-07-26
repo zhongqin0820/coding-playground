@@ -14,7 +14,8 @@ func reverseString(s string) string {
 	return string(b)
 }
 
-func twoSum(numbers []int, target int) []int {
+// using map to solve
+func twoSum1(numbers []int, target int) []int {
 	m := make(map[int]int)
 	for i, v := range numbers {
 		if value, ok := m[target-v]; ok {
@@ -26,13 +27,28 @@ func twoSum(numbers []int, target int) []int {
 	return []int{}
 }
 
+// two pointer solution
+func twoSum(numbers []int, target int) []int {
+	left, right := 0, len(numbers)-1
+	for left < right {
+		if numbers[left]+numbers[right] == target {
+			return []int{left + 1, right + 1}
+		} else if numbers[left]+numbers[right] < target {
+			left++
+		} else {
+			right--
+		}
+	}
+	return []int{left + 1, right + 1}
+}
+
 func main() {
 	// res := p.AddBinary("110010", "10111")
 	// res := p.StrStr("hello", "ll")
 	// res := reverseString("hello")
 	// res := twoSum([]int{2, 7, 11, 15}, 9)
 	// res := twoSum([]int{2, 3, 4}, 6)
-	// res := twoSum([]int{2, 3, 4, 5, 11, 17, 19}, 16)
-	res := twoSum([]int{5, 25, 75}, 100)
+	res := twoSum([]int{2, 3, 4, 5, 11, 17, 19}, 16)
+	// res := twoSum([]int{5, 25, 75}, 100)
 	log.Printf("%d\n", res)
 }

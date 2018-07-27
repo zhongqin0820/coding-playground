@@ -122,6 +122,46 @@ func getRow(rowIndex int) []int {
 	return front
 }
 
+func isSubsequence(s string, t string) bool {
+    var j = 0
+    lenS := len(s)
+    b := []byte(t)
+    for _, v := range b {
+        if j>=lenS {
+            break
+        }
+        if s[j] == v {
+            j++
+        }
+    }
+    return j == lenS
+}
+
+func checkPossibility(nums []int) bool {
+    lenN := len(nums)
+    if lenN <= 2 {
+        return true
+    }
+    prev, cnt, next := nums[0], 1, nums[1]
+    for i := 1; i < lenN && cnt >= -2; i++ {
+        prev = nums[i-1]
+        if i == lenN - 1 {
+            next = nums[i]
+        } else {
+            next = nums[i+1]
+        }
+        if v := nums[i]; v < prev {
+            nums[i-1] = v
+            cnt--
+        } else if  v > next {
+            nums[i] = prev
+            cnt--
+        }
+    }
+    log.Println(cnt)
+    return cnt >= 0
+}
+
 func main() {
 	// res := p.AddBinary("110010", "10111")
 	// res := p.StrStr("hello", "ll")
@@ -149,6 +189,12 @@ func main() {
 	// res = getRow(3)
 	// log.Printf("%d\n", res)
 	// res = getRow(4)
-	res := getRow(33)
-	log.Printf("%d\n", res)
+	// res := getRow(33)
+    // res := isSubsequence("","ahbgdc")
+    // res := checkPossibility([]int{})
+    // res := checkPossibility([]int{3,2,2,3})
+    // res := checkPossibility([]int{3,4,2,3})
+    // res := checkPossibility([]int{4,2,3,1})
+    res := checkPossibility([]int{4,2,3})
+	log.Printf("%t\n", res)
 }

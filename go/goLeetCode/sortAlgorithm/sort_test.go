@@ -48,3 +48,17 @@ func TestQuickSort(t *testing.T) {
 	s2 := QuickSort(s, true) //big -> small
 	t.Log(s2)
 }
+
+// go test -v -test.run InsertReview
+func TestInsertReview(t *testing.T) {
+	s := []int{-1, 3, 2, -6}
+	s1 := InsertReview(s)
+	t.Log(s1)
+}
+
+// go test -v -test.run SelectReview
+func TestSelectReview(t *testing.T) {
+	s := []int{-1, 3, 2, -5}
+	s1 := SelectReview(s)
+	t.Log(s1)
+}

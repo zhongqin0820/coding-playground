@@ -53,6 +53,26 @@ func InsertSort(s []int, flag bool) []int {
 	return s
 }
 
+func InsertReview(s []int) []int {
+	for i := 0; i < len(s)-1; i++ {
+		if s[i] > s[i+1] { //small->big
+			temp := s[i+1]
+			for j := i; j >= 0; j-- {
+				if s[j] < temp {
+					s[j+1] = temp
+					break
+				} else {
+					s[j], s[j+1] = s[j+1], s[j]
+					if j == 0 {
+						s[j] = temp
+					}
+				}
+			}
+		}
+	}
+	return s
+}
+
 // use temp to instore the temp position of the min/max value of the unsorted part
 // always select the min/max value from the unsorted part
 func SelectSort(s []int, flag bool) []int {
@@ -75,6 +95,20 @@ func SelectSort(s []int, flag bool) []int {
 			s[i], s[temp] = s[temp], s[i]
 		}
 		log.Println(s)
+	}
+	return s
+}
+
+//
+func SelectReview(s []int) []int {
+	var k int
+	for i := 0; i < len(s); i++ {
+		for j := i; j < len(s); j++ {
+			if s[j] < s[i] {
+				k = j
+			}
+		}
+		s[i], s[k] = s[k], s[i]
 	}
 	return s
 }

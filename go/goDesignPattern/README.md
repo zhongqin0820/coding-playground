@@ -25,3 +25,19 @@
 3. set up the buider of `m`: `m.SetBuider(b)`
 4. run the produce pipeline : `m.Build()`
 5. the corresponding `Product` of `XXXBuilder` build is :`var x = b.GetProduct()`
+
+### Factory
+#### Simple Factory
+- Use a condition function to select which to use
+
+#### Method Factory
+- Use an abstract factory to design the type of factory at runtime
+- The concrete factory implements the `CreateXXX()` method to return a corresponding product of an abstract Product interface
+
+#### Abstract Factory
+- The abstract factory is a combinition of Builder and Method Factory 
+- Thus, the abstract factory is to composite different products.
+
+### Prototype
+- Modify some attributes of the concrete product 
+- Use `Clone()` to have a new object at runtime without pollute the original object

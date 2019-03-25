@@ -1,4 +1,4 @@
-package sortAlgorithm
+package sorts
 
 // determine the mid=i+(j-i)/2, and the bound is j=mid, i=mid+1
 func BinarySearch(s []int, target int) int {

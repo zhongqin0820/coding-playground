@@ -1,4 +1,4 @@
-package sortAlgorithm
+package sorts
 
 import (
 	"testing"

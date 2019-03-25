@@ -1,4 +1,4 @@
-package goGuide
+package guide
 import (
     ""
 )

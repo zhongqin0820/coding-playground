@@ -1,4 +1,4 @@
-package myPack
+package pack
 
 import (
 	"log"

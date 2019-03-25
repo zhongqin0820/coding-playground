@@ -1,4 +1,4 @@
-package contestSet
+package contest
 
 import (
 	// "container/list"

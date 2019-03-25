@@ -1,4 +1,4 @@
-package MyContainer
+package containers
 
 import (
 	"container/list"

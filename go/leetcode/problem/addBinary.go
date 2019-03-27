@@ -1,4 +1,4 @@
-package problemSet
+package problem
 
 import (
 	"log"

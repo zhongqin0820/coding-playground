@@ -1,4 +1,4 @@
-package main
+package guide
 
 import (
 	"fmt"
@@ -247,7 +247,7 @@ func exp8() {
 	fmt.Println("Over")
 }
 
-func main() {
+func main3() {
 	// exp1()
 	// exp2()
 	// exp3()

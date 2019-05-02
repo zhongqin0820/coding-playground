@@ -1,4 +1,4 @@
-package main
+package guide
 
 import (
 	"fmt"
@@ -154,7 +154,7 @@ func exp8() {
 	}
 }
 
-func main() {
+func main2() {
 	// exp1()
 	// exp2()
 	// exp3()

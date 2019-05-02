@@ -1,4 +1,4 @@
-package main
+package intro
 
 import (
 	"fmt"
@@ -16,7 +16,7 @@ func exp1() {
 	log.Println("end")
 }
 
-func main() {
+func main13() {
 	exp1()
 	fmt.Println("......")
 }

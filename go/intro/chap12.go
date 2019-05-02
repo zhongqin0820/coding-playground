@@ -1,4 +1,4 @@
-package main
+package intro
 
 import (
 	"bufio"
@@ -115,7 +115,7 @@ func exp7() {
 	log.Printf("%x\n", checkSum)
 }
 
-func main() {
+func main12() {
 	// exp1()
 	// exp2()
 	// exp3()

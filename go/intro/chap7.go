@@ -1,4 +1,4 @@
-package main
+package intro
 
 import (
 	"bytes"
@@ -30,7 +30,7 @@ func exp3() {
 	log.Println(myexp.MyPackA)
 }
 
-func main() {
+func main7() {
 	// exp1()
 	// exp2()
 	exp3()

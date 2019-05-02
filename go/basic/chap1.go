@@ -1,4 +1,4 @@
-package main
+package basic
 
 import (
 	"fmt"
@@ -99,7 +99,7 @@ func (q *Q) q5() {
 }
 
 // main function
-func main() {
+func main1() {
 	q := Q{}
 	q.q5()
 	// q.q4_3()

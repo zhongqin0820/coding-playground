@@ -1,4 +1,4 @@
-package main
+package intro
 
 import (
 	"fmt"
@@ -75,7 +75,7 @@ func exp4() {
 	return
 }
 
-func main() {
+func main4() {
 	// exp1()
 	// exp2()
 	// exp3()

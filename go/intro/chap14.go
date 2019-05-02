@@ -1,4 +1,4 @@
-package main
+package intro
 
 import (
 	"log"
@@ -47,6 +47,6 @@ func exp1() {
 	return
 }
 
-func main() {
+func main14() {
 	exp1()
 }

@@ -1,4 +1,4 @@
-package main
+package guide
 
 import (
 	"fmt"
@@ -173,7 +173,7 @@ func Fibonacci() func() int {
 }
 
 // main function
-func main() {
+func main1() {
 	// fmt.Println(math.Sqrt(5))
 	// fmt.Println(MySqrt(5))
 	// PrintOS()

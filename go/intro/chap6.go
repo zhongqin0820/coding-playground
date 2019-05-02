@@ -1,4 +1,4 @@
-package main
+package intro
 
 import (
 	"fmt"
@@ -61,7 +61,7 @@ func exp4() {
 	log.Println(res)
 }
 
-func main() {
+func main6() {
 	// exp1()
 	// exp2()
 	exp3()

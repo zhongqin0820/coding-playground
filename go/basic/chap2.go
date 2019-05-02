@@ -1,4 +1,4 @@
-package main
+package basic
 
 import (
 	"fmt"
@@ -35,7 +35,7 @@ func (q *Q) q7(a, b int) []int {
 // func (q *Q) q9() {
 
 // }
-func main() {
+func main2() {
 	q := Q{}
 	// m := q.q6()
 	// fmt.Println(m)

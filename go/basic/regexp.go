@@ -1,4 +1,4 @@
-package main
+package basic
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func main() {
+func regexp() {
 	resp, err := http.Get("http://www.baidu.com")
 	if err != nil {
 		fmt.Println("http get error.")

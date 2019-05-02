@@ -1,4 +1,4 @@
-package main
+package intro
 
 import (
 	"fmt"
@@ -54,7 +54,7 @@ func exp3() {
 	myexp.MyFunc()
 }
 
-func main() {
+func main9() {
 	// exp1()
 	// exp2()
 	exp3()

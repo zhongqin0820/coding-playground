@@ -1,4 +1,4 @@
-package main
+package basic
 
 import (
 	"crypto/md5"
@@ -45,7 +45,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func main() {
+func web() {
 	http.HandleFunc("/", sayhelloName)
 	http.HandleFunc("/login", login)
 	err := http.ListenAndServe("localhost:9999", nil)

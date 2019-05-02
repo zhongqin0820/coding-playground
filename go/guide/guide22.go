@@ -1,4 +1,4 @@
-package main
+package guide
 
 import (
 	"fmt"
@@ -149,7 +149,7 @@ func exp8() {
 	pic.ShowImage(m)
 }
 
-func main() {
+func main22() {
 	// exp1()
 	// exp2()
 	// exp3()

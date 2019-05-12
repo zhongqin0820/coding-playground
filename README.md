@@ -7,10 +7,12 @@
 - typescript
 
 # 参考资料
+包括但不限于如下相关条目.
+
 ## go
 - [ ] [《通过测试驱动开发学习 Go 语言》](https://github.com/studygolang/learn-go-with-tests)
-- [ ] [go语言教程](http://www.runoob.com/go/go-tutorial.html)
 - [ ] [学习Go语言]()
+- [x] [go语言教程](http://www.runoob.com/go/go-tutorial.html)
 - [x] [go指南](http://tour.studygolang.com/list)
 - [x] [go web](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/preface.md)
 - [x] [GO命令教程-极客学院](http://wiki.jikexueyuan.com/project/go-command-tutorial/)
@@ -19,7 +21,7 @@
 
 ## python
 - [ ] [Python进阶](https://github.com/eastlakeside/interpy-zh/blob/master/SUMMARY.md)
-- [ ] [Python 3 教程](http://www.runoob.com/python3/python3-tutorial.html)
+- [x] [Python 3 教程](http://www.runoob.com/python3/python3-tutorial.html)
 - [x] [廖雪峰Python3教程](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
 - [x] [Python 基础教程](http://www.runoob.com/python/python-tutorial.html)
 

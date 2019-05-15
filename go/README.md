@@ -8,6 +8,7 @@ This folder contains the practice codes of Golang.
 .
 ├── README.md
 ├── action                #ref: [_Go in Action_](https://book.douban.com/subject/27015617/)
+├── advanced                  #ref: [_Advanced-go-programming-book_](https://www.gitbook.com/book/chai2010/advanced-go-programming-book/)
 ├── basic                  #ref: [_Learning-Go-zh-cn_](https://github.com/mikespook/Learning-Go-zh-cn)
 ├── guide                 #ref: [_the-way-to-go_ZH_CN_](https://github.com/Unknwon/the-way-to-go_ZH_CN)
 ├── intro                   #ref: [_The Go Programming Language_](http://www.gopl.io/)

@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// Clip codes from "github.com/docker/docker/pkg/pubsub"
 type (
 	subscriber chan interface{}
 	//receives a content same as the definition in subscriber

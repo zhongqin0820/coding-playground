@@ -23,7 +23,7 @@ func handleLibCommands(tokens []string) {
 		{
 			if len(tokens) == 6 {
 				id++
-				lib.Add(&library.MusicEntry{strconv.Itoa(id),
+				lib.Add(&MusicEntry{strconv.Itoa(id),
 					tokens[2], tokens[3], tokens[4], tokens[5]})
 			} else {
 				fmt.Println("USAGE: lib add <name><artist><source><type>")
@@ -61,7 +61,9 @@ lib remove <name> -- Remove the specified music from the lib
 play <name> -- Play the specified music
 `)
 	lib = NewMusicManager()
+	// 实例话一个reader
 	r := bufio.NewReader(os.Stdin)
+	// for循环读
 	for {
 		fmt.Print("Enter command-> ")
 		rawLine, _, _ := r.ReadLine()
@@ -69,6 +71,7 @@ play <name> -- Play the specified music
 		if line == "q" || line == "e" {
 			break
 		}
+		// 将字符串进行处理
 		tokens := strings.Split(line, " ")
 		if tokens[0] == "lib" {
 			handleLibCommands(tokens)

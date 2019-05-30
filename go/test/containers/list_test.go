@@ -3,6 +3,7 @@ package containers
 import (
 	"container/list"
 	"fmt"
+	"testing"
 )
 
 func IteList() {
@@ -36,4 +37,13 @@ func StructFea() {
 	} else {
 		fmt.Println("Not Equal")
 	}
+}
+
+func TestIteList(t *testing.T) {
+	IteList()
+}
+
+// go test -v -test.run TestStructFea
+func TestStructFea(t *testing.T) {
+	StructFea()
 }

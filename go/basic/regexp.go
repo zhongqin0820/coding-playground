@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func regexp() {
+func Regexp() {
 	resp, err := http.Get("http://www.baidu.com")
 	if err != nil {
 		fmt.Println("http get error.")

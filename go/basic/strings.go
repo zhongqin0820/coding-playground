@@ -43,7 +43,7 @@ func checkError(e error) {
 	}
 }
 
-func strings() {
+func Strings() {
 	// Append 系列函数将整数等转换为字符串后，添加到现有的字节数组中。
 	str := make([]byte, 0, 100)
 	str = strconv.AppendInt(str, 4567, 10)

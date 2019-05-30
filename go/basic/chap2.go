@@ -37,8 +37,8 @@ func (q *Q) q7(a, b int) []int {
 // }
 func main2() {
 	q := Q{}
-	// m := q.q6()
-	// fmt.Println(m)
-	// s := q.q7(2, 7)
-	// fmt.Println(s)
+	m := q.q6()
+	fmt.Println(m)
+	s := q.q7(2, 7)
+	fmt.Println(s)
 }

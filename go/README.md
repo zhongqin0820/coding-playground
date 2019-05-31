@@ -4,6 +4,22 @@
 # Warranty
 This folder contains the practice codes of Golang.
 
+# Attention
+- OOP in golang
+    - type
+    - interface
+        - switch case
+        - reflect
+    - struct
+
+- Concurrent in golang
+    - atomic
+    - sync
+    - chan
+        - select case
+        - close
+    - go
+
 # Structures
 .
 ├── README.md

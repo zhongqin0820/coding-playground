@@ -8,20 +8,28 @@ Practice TDD in Golang. Includes:
     - related commands
 
 2. Advanced usage
-    - unit test
-    - benchmark test
-    - race test
-    - mock test
+    - unit test: `testing.T`
+    - benchmark test: `testing.B`
+    - mock test: `testing.M`
+    - example test: 
+        - `// Output:`
+        - `// result`
+
+    - race test: `go test -race`(only in concurrent codes)
 
 # `go test`
 ## basics
 In `var t *testing.T`, `t` has many usages, one is logging! There are three categories and each has three functional of its way.
 
 ```go
+// for logging
 t.Log
 t.Logf
 t.Error
 t.Fatal
+
+// for testing
+t.Run(description string, handle func(*testing.T))
 ```
 
 ### Commands

@@ -7,7 +7,7 @@ import (
 	"unsafe"
 )
 
-func worker(id int, jobs <-chan int, results chan<- int) {
+func workers(id int, jobs <-chan int, results chan<- int) {
 	for j := range jobs {
 		log.Println("worker", id, "started job", j)
 		time.Sleep(1e9)
@@ -20,7 +20,7 @@ func TestWorker(t *testing.T) {
 	jobs := make(chan int, 100)
 	results := make(chan int, 100)
 	for w := 1; w < 4; w++ {
-		go worker(w, jobs, results)
+		go workers(w, jobs, results)
 	}
 	for j := 1; j < 6; j++ {
 		jobs <- j

@@ -20,3 +20,4 @@ This folder contains the practicing codes of Golang.
 - [ ] [The Golang Standard Library by Example](https://github.com/polaris1119/The-Golang-Standard-Library-by-Example)
 - [ ] [_Introduction to Go Classical Patterns_](https://www.bilibili.com/video/av10623920)
 - [ ] [_build-web-application-with-golang_](https://github.com/astaxie/build-web-application-with-golang)
+- [ ] [2019-06-11]: [Golang tutorial series](https://golangbot.com/learn-golang-series/)

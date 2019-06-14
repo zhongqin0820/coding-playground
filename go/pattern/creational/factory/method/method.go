@@ -8,11 +8,11 @@ type Server interface {
 // concrete product
 type RestfulServer struct{}
 
-type SoaServer struct{}
-
 func (r *RestfulServer) GetServerType() string {
 	return "Restful"
 }
+
+type SoaServer struct{}
 
 func (s *SoaServer) GetServerType() string {
 	return "SOA"
@@ -26,11 +26,11 @@ type Factory interface {
 // concrete factory
 type RestfulFactory struct{}
 
-type SoaFactory struct{}
-
 func (r *RestfulFactory) CreateServer() Server {
 	return &RestfulServer{}
 }
+
+type SoaFactory struct{}
 
 func (s *SoaFactory) CreateServer() Server {
 	return &SoaServer{}

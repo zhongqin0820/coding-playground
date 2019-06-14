@@ -10,6 +10,7 @@ type testCase struct {
 	storage StorageType
 }
 
+// go test -v -run=TestStorage
 func TestStorage(t *testing.T) {
 	var ts []testCase = []testCase{
 		{"DiskStorage", DiskStorage},
@@ -22,7 +23,7 @@ func TestStorage(t *testing.T) {
 		t.Run(v.name, func(t *testing.T) {
 			storage := NewStore(v.storage)
 			if storage == nil {
-				t.Errorf("Type DiskStorage not implemented yet")
+				t.Log("Type DiskStorage not implemented yet")
 			} else {
 				storage.Save(fmt.Sprint("Save from ", v.name))
 			}

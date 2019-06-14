@@ -33,11 +33,11 @@ type Parser interface {
 
 type XmlParser struct{}
 
-type JsonParser struct{}
-
 func (x *XmlParser) ParseData() string {
 	return "XmlParser parse"
 }
+
+type JsonParser struct{}
 
 func (j *JsonParser) ParseData() string {
 	return "JsonParser parse"
@@ -50,11 +50,11 @@ type Encoder interface {
 
 type XmlEncoder struct{}
 
-type JsonEncoder struct{}
-
 func (x *XmlEncoder) EncodeData() string {
 	return "XmlEncoder encode"
 }
+
+type JsonEncoder struct{}
 
 func (j *JsonEncoder) EncodeData() string {
 	return "JsonEncoder encode"

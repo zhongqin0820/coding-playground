@@ -23,7 +23,7 @@ func TestStorage(t *testing.T) {
 		t.Run(v.name, func(t *testing.T) {
 			storage := NewStore(v.storage)
 			if storage == nil {
-				t.Log("Type DiskStorage not implemented yet")
+				t.Log("NotExistedStorage")
 			} else {
 				storage.Save(fmt.Sprint("Save from ", v.name))
 			}

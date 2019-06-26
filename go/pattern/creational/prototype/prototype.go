@@ -13,6 +13,10 @@ type Role interface {
 	Show()
 }
 
+func NewRole() Role {
+	return &Chinese{HeadColor: "black", EyesColor: "yellow", Tall: 190}
+}
+
 // concrete product: implements the attri modify method and call Clone() to have a new object at runtime
 type Chinese struct {
 	HeadColor string
@@ -37,7 +41,5 @@ func (c *Chinese) SetTall(s int) {
 }
 
 func (c *Chinese) Show() {
-	log.Println(c.HeadColor)
-	log.Println(c.EyesColor)
-	log.Println(c.Tall)
+	log.Printf("%s,%s,%d\n", c.HeadColor, c.EyesColor, c.Tall)
 }

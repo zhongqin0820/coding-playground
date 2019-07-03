@@ -1,4 +1,4 @@
-package snippet
+package basic
 
 import (
 	"sync"

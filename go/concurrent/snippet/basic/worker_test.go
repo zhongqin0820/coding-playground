@@ -7,6 +7,7 @@ import (
 	"unsafe"
 )
 
+// https://gobyexample.com/worker-pools
 func workers(id int, jobs <-chan int, results chan<- int) {
 	for j := range jobs {
 		log.Println("worker", id, "started job", j)

@@ -30,7 +30,7 @@ func TestWorker(t *testing.T) {
 		// req := NewStringRequest("(Msg_id: %d) -> Hello", i, &wg)
 		req := Request{
 			Data: fmt.Sprintf("(Msg_id: %d) -> Hello", i),
-			handler: func(i interface{}) {
+			Handler: func(i interface{}) {
 				s, ok := i.(string)
 				defer wg.Done()
 				if !ok {

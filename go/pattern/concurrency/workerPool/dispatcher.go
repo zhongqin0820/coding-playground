@@ -26,14 +26,17 @@ type dispatcher struct {
 	inCh chan Request
 }
 
+// LaunchWorker launched the worker to consume the inCh chan Request
 func (d *dispatcher) LaunchWorker(w WorkerLauncher) {
 	w.LaunchWorker(d.inCh)
 }
 
+// finish the job
 func (d *dispatcher) Stop() {
 	close(d.inCh)
 }
 
+// add new job
 func (d *dispatcher) MakeRequest(r Request) {
 	select {
 	case d.inCh <- r:

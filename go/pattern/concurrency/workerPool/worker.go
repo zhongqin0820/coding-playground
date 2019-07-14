@@ -9,7 +9,7 @@ import (
 
 type Request struct {
 	Data    interface{}
-	handler RequestHandler
+	Handler RequestHandler
 }
 
 type RequestHandler func(interface{})
@@ -17,7 +17,7 @@ type RequestHandler func(interface{})
 func NewStringRequest(s string, id int, wg *sync.WaitGroup) Request {
 	return Request{
 		Data: fmt.Sprintf(s, id),
-		handler: func(i interface{}) {
+		Handler: func(i interface{}) {
 			defer wg.Done()
 			s, ok := i.(string)
 			if !ok {
@@ -52,7 +52,7 @@ func (w *PreffixSuffixWorker) uppercase(in <-chan Request) <-chan Request {
 		for msg := range in {
 			s, ok := msg.Data.(string)
 			if !ok {
-				msg.handler(nil)
+				msg.Handler(nil)
 				continue
 			}
 			msg.Data = strings.ToUpper(s)
@@ -69,7 +69,7 @@ func (w *PreffixSuffixWorker) append(in <-chan Request) <-chan Request {
 		for msg := range in {
 			uppercaseString, ok := msg.Data.(string)
 			if !ok {
-				msg.handler(nil)
+				msg.Handler(nil)
 				continue
 			}
 			msg.Data = fmt.Sprintf("%s%s", uppercaseString, w.suffixS)
@@ -85,10 +85,10 @@ func (w *PreffixSuffixWorker) prefix(in <-chan Request) {
 		for msg := range in {
 			uppercasedStringWithSuffix, ok := msg.Data.(string)
 			if !ok {
-				msg.handler(nil)
+				msg.Handler(nil)
 				continue
 			}
-			msg.handler(fmt.Sprintf("%s%s", w.prefixS,
+			msg.Handler(fmt.Sprintf("%s%s", w.prefixS,
 				uppercasedStringWithSuffix))
 		}
 	}()

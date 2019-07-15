@@ -20,11 +20,13 @@ func TestInMemSort(t *testing.T) {
 }
 
 func TestReaderSource(t *testing.T) {
-	const fileName = "small.in"
-	const outfile = "small.out"
-	const n = 64
-	const chunkCount = 2
-	const chunkSize = n * 8 / chunkCount
+	const (
+		fileName   = "small.in"
+		outfile    = "small.out"
+		n          = 64
+		chunkCount = 2
+		chunkSize  = n * 8 / chunkCount
+	)
 
 	GenData(fileName, n)
 	Init()

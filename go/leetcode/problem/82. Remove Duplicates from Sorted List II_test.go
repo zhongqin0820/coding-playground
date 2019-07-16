@@ -7,6 +7,12 @@ import (
 )
 
 // https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
+
+// Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
+
+// Time: O(n)
+// Space: O(n)
+
 /**
  * Definition for singly-linked list.
  * type ListNode struct {
@@ -14,8 +20,6 @@ import (
  *     Next *ListNode
  * }
  */
-// Time: O(n)
-// Space: O(n)
 func deleteDuplicates(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
@@ -54,10 +58,10 @@ func TestDeleteDuplicates(t *testing.T) {
 		{NewListNode([]int{1, 2, 3, 3, 4, 4, 5}), NewListNode([]int{1, 2, 5})},
 	}
 	for i, ts := range tests {
-		t.Run(fmt.Sprintf("Example %d", i), func(t *testing.T) {
+		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
 			if res := deleteDuplicates(ts.input); !res.Compare(ts.output) {
-				t.Errorf("got %v\n", res.PrintList())
 				t.Errorf("expected %v\n", ts.output.PrintList())
+				t.Errorf("got %v\n", res.PrintList())
 			}
 		})
 	}

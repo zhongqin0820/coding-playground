@@ -6,6 +6,12 @@ import (
 )
 
 // https://leetcode.com/problems/search-a-2d-matrix/
+
+// Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
+
+// - Integers in each row are sorted from left to right.
+// - The first integer of each row is greater than the last integer of the previous row.
+
 func searchMatrix(matrix [][]int, target int) bool {
 	if matrix == nil || len(matrix) == 0 {
 		return false
@@ -37,14 +43,14 @@ func searchMatrixAdv(matrix [][]int, target int) bool {
 	for i := 0; i < row; i++ {
 		// 找到目标行，对目标行使用二分搜索（binary searchs）
 		if matrix[i][col-1] >= target {
-			return bs(matrix[i], target, 0, col)
+			return bs74(matrix[i], target, 0, col)
 		}
 	}
 	return false
 }
 
-// bs 二分搜索（binary searchs）
-func bs(array []int, target, low int, high int) bool {
+// bs74 二分搜索（binary searchs）
+func bs74(array []int, target, low int, high int) bool {
 	if low > high {
 		return false
 	}
@@ -53,9 +59,9 @@ func bs(array []int, target, low int, high int) bool {
 		return true
 	}
 	if array[mid] < target {
-		return bs(array, target, mid+1, high)
+		return bs74(array, target, mid+1, high)
 	}
-	return bs(array, target, low, mid-1)
+	return bs74(array, target, low, mid-1)
 }
 
 func TestSearchMatrix(t *testing.T) {

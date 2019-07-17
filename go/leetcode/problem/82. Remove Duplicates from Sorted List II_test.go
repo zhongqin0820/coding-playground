@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"math"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
@@ -59,10 +61,9 @@ func TestDeleteDuplicates(t *testing.T) {
 	}
 	for i, ts := range tests {
 		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
-			if res := deleteDuplicates(ts.input); !res.Compare(ts.output) {
-				t.Errorf("expected %v\n", ts.output.PrintList())
-				t.Errorf("got %v\n", res.PrintList())
-			}
+			ast := assert.New(t)
+			ast.Equal(ts.output, deleteDuplicates(ts.input))
+			ast.Equal(ts.output.PrintList(), deleteDuplicates(ts.input).PrintList())
 		})
 	}
 }

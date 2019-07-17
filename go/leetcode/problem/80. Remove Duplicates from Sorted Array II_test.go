@@ -3,6 +3,8 @@ package problem
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
@@ -41,9 +43,8 @@ func TestRemoveDuplications(t *testing.T) {
 	}
 	for i, ts := range tests {
 		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
-			if res := removeDuplicates(ts.input); res != ts.output {
-				t.Errorf("expected %d got %d\n", ts.output, res)
-			}
+			ast := assert.New(t)
+			ast.Equal(ts.output, removeDuplicates(ts.input))
 		})
 	}
 }

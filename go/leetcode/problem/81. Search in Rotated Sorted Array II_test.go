@@ -3,6 +3,8 @@ package problem
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
@@ -93,14 +95,12 @@ func TestSearch(t *testing.T) {
 
 	for i, ts := range tests {
 		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
-			if res := search(ts.nums, ts.target); res != ts.output {
-				t.Errorf("expected %t got %t\n", ts.output, res)
-			}
+			ast := assert.New(t)
+			ast.Equal(ts.output, search(ts.nums, ts.target))
 		})
 		t.Run(fmt.Sprintf("Example %d Adv", i+1), func(t *testing.T) {
-			if res := searchAdv(ts.nums, ts.target); res != ts.output {
-				t.Errorf("expected %t got %t\n", ts.output, res)
-			}
+			ast := assert.New(t)
+			ast.Equal(ts.output, searchAdv(ts.nums, ts.target))
 		})
 	}
 }

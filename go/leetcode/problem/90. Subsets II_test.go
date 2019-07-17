@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"sort"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // https://leetcode.com/problems/subsets-ii/
@@ -51,10 +53,8 @@ func TestSubsetsWithDup(t *testing.T) {
 	}
 	for i, ts := range tests {
 		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
-			if res := subsetsWithDup(ts.input); !slice2DCompare(&res, &ts.output) {
-				t.Errorf("expected %v\n", ts.output)
-				t.Errorf("got %v\n", res)
-			}
+			ast := assert.New(t)
+			ast.Equal(ts.output, subsetsWithDup(ts.input))
 		})
 	}
 

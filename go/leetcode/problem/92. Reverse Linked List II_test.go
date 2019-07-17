@@ -3,6 +3,8 @@ package problem
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // https://leetcode.com/problems/reverse-linked-list-ii/
@@ -63,10 +65,9 @@ func TestReverseBetween(t *testing.T) {
 	}
 	for i, ts := range tests {
 		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
-			if res := reverseBetween(ts.input, ts.m, ts.n); !res.Compare(ts.output) {
-				t.Errorf("expected %v\n", ts.output.PrintList())
-				t.Errorf("got %v\n", res.PrintList())
-			}
+			ast := assert.New(t)
+			// ast.Equal(ts.output, reverseBetween(ts.input, ts.m, ts.n))
+			ast.Equal(ts.output.PrintList(), reverseBetween(ts.input, ts.m, ts.n).PrintList())
 		})
 	}
 }

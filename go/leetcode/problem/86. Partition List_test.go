@@ -3,6 +3,8 @@ package problem
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // https://leetcode.com/problems/partition-list/
@@ -63,10 +65,9 @@ func TestPartition(t *testing.T) {
 
 	for i, ts := range tests {
 		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
-			if res := partition(ts.head, ts.x); !res.Compare(ts.output) {
-				t.Errorf("expected %v\n", ts.output.PrintList())
-				t.Errorf("got %v\n", res.PrintList())
-			}
+			ast := assert.New(t)
+			// ast.Equal(ts.output, partition(ts.head, ts.x))
+			ast.Equal(ts.output.PrintList(), partition(ts.head, ts.x).PrintList())
 		})
 	}
 }

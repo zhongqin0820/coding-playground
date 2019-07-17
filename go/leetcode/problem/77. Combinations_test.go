@@ -3,6 +3,8 @@ package problem
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // https://leetcode.com/problems/combinations/
@@ -41,10 +43,8 @@ func TestCombine(t *testing.T) {
 
 	for i, ts := range tests {
 		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
-			if res := combine(ts.n, ts.k); !slice2DCompare(&res, &ts.output) {
-				t.Errorf("expected %v\n", ts.output)
-				t.Errorf("got %v\n", res)
-			}
+			ast := assert.New(t)
+			ast.Equal(ts.output, combine(ts.n, ts.k))
 		})
 	}
 }

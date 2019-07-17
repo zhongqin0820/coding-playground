@@ -3,6 +3,8 @@ package problem
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // https://leetcode.com/problems/gray-code/
@@ -58,10 +60,8 @@ func TestGrayCode(t *testing.T) {
 
 	for i, ts := range tests {
 		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
-			if res := grayCode(ts.input); !slice1DCompare(res, ts.output) {
-				t.Errorf("expected %v\n", ts.output)
-				t.Errorf("got %v\n", res)
-			}
+			ast := assert.New(t)
+			ast.Equal(ts.output, grayCode(ts.input))
 		})
 	}
 }

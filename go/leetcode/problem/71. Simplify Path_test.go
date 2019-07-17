@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"strings"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // https://leetcode.com/problems/simplify-path/
@@ -51,9 +53,8 @@ func TestSimplifyPath(t *testing.T) {
 	//
 	for i, ts := range tests {
 		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
-			if res := simplifyPath(ts.input); res != ts.output {
-				t.Errorf("expected %s got %s\n", ts.output, res)
-			}
+			ast := assert.New(t)
+			ast.Equal(ts.output, simplifyPath(ts.input))
 		})
 	}
 }

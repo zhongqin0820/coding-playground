@@ -3,6 +3,8 @@ package problem
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // https://leetcode.com/problems/search-a-2d-matrix/
@@ -76,14 +78,12 @@ func TestSearchMatrix(t *testing.T) {
 	}
 	for i, ts := range tests {
 		t.Run(fmt.Sprintf("Example %d Naive", i+1), func(t *testing.T) {
-			if res := searchMatrix(ts.matrix, ts.target); res != ts.output {
-				t.Errorf("expected %t got %t", ts.output, res)
-			}
+			ast := assert.New(t)
+			ast.Equal(ts.output, searchMatrix(ts.matrix, ts.target))
 		})
 		t.Run(fmt.Sprintf("Example %d Adv", i+1), func(t *testing.T) {
-			if res := searchMatrixAdv(ts.matrix, ts.target); res != ts.output {
-				t.Errorf("expected %t got %t", ts.output, res)
-			}
+			ast := assert.New(t)
+			ast.Equal(ts.output, searchMatrixAdv(ts.matrix, ts.target))
 		})
 	}
 }

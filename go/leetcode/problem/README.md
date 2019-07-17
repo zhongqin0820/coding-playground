@@ -17,5 +17,9 @@ Solve [LeetCode problemset](https://leetcode.com/problemset/algorithms/)  in Gol
 go test -v .
 ```
 
+## Related
+- [stretchr/testify](https://github.com/stretchr/testify): A toolkit with common assertions and mocks that plays nicely with the standard library
+- [aQuaYi/LeetCode-in-Go](https://github.com/aQuaYi/LeetCode-in-Go): Go Solution for LeetCode algorithm problems, 100% coverage, continually updating.
+
 # Links
 - [LeetCode problemset](https://leetcode.com/problemset/algorithms/)

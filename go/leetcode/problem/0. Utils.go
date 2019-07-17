@@ -2,6 +2,7 @@ package problem
 
 import (
 	"fmt"
+	"strings"
 )
 
 // Definition for singly-linked list.
@@ -34,7 +35,7 @@ func NewListNode(a []int) *ListNode {
 func (this *ListNode) PrintList() string {
 	that := this
 	res := ""
-	for that.Next != nil {
+	for that != nil && that.Next != nil {
 		res += fmt.Sprintf("%d->", that.Val)
 		that = that.Next
 	}
@@ -88,6 +89,22 @@ func slice1DCompare(a, b []int) bool {
 	}
 	for i, v := range a {
 		if v != b[i] {
+			return false
+		}
+	}
+	return true
+}
+
+// compare two 1D string
+func string1DCompare(a, b []string) bool {
+	if a == nil || b == nil || len(a) != len(b) {
+		return false
+	}
+	if len(a) == 0 && len(a) == len(b) {
+		return true
+	}
+	for i, v := range a {
+		if strings.Compare(v, b[i]) != 0 {
 			return false
 		}
 	}

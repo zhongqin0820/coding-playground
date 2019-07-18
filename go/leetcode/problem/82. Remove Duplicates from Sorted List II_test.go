@@ -22,7 +22,7 @@ import (
  *     Next *ListNode
  * }
  */
-func deleteDuplicates(head *ListNode) *ListNode {
+func deleteDuplicatesII(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
@@ -52,7 +52,7 @@ func deleteDuplicates(head *ListNode) *ListNode {
 	return ret.Next
 }
 
-func TestDeleteDuplicates(t *testing.T) {
+func TestDeleteDuplicatesII(t *testing.T) {
 	tests := []struct {
 		input, output *ListNode
 	}{
@@ -62,8 +62,8 @@ func TestDeleteDuplicates(t *testing.T) {
 	for i, ts := range tests {
 		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
 			ast := assert.New(t)
-			ast.Equal(ts.output, deleteDuplicates(ts.input))
-			ast.Equal(ts.output.PrintList(), deleteDuplicates(ts.input).PrintList())
+			ast.Equal(ts.output, deleteDuplicatesII(ts.input))
+			ast.Equal(ts.output.PrintList(), deleteDuplicatesII(ts.input).PrintList())
 		})
 	}
 }

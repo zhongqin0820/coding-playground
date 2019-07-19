@@ -53,7 +53,7 @@ func longestPalindrome(s string) string {
 			b--
 			// 循环结束后，s[b:e+1]是这次能找到的最长回文。
 		}
-		log.Println(s[b : e+1])
+		// log.Println(s[b : e+1])
 		// 创新记录的话，就更新记录
 		if e+1-b > maxLen {
 			begin = b

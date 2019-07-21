@@ -5,6 +5,7 @@
 Solve [LeetCode problemset](https://leetcode.com/problemset/algorithms/)  in Golang with full descriptions and local unit test cases for each problem.
 
 ## Usage
+- the folder name indicates its category
 - the file name indicates the corresponding problem, it contains:
     - problem URL
     - description
@@ -12,7 +13,7 @@ Solve [LeetCode problemset](https://leetcode.com/problemset/algorithms/)  in Gol
     - local unit test
         - the provided test cases in [LeetCode](https://leetcode.com)
         - unit test code
-- one may use this by typing:
+- after entering the specific folder, one may use this by typing:
 ```sh
 go test -v .
 ```

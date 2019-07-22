@@ -1,7 +1,5 @@
 package sorts
 
-import "log"
-
 // need to assign the mergesort result to a slice and rearrange the two parts from the assigned slice
 func MergeSort(s []int, flag bool) []int {
 	if Defensive(s) {
@@ -113,7 +111,7 @@ func HeapSort(a []int, flag bool) {
 	// build heap
 	for i := n / 2; i >= 0; i-- {
 		// adjust heap
-		log.Println(a)
+		// log.Println(a)
 		HeapAdjust(a, i, n, flag)
 	}
 	// sort out

@@ -100,6 +100,7 @@ func InsertSort(s []int, flag bool) {
 					s[j] = temp
 				} else {
 					s[j+1] = temp
+					break
 				}
 			}
 		}

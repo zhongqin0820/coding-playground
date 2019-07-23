@@ -154,3 +154,39 @@ func TestTypeAndReflect(t *testing.T) {
 		log.Println("value:", reflect.ValueOf(v))
 	})
 }
+
+func TestPointers(t *testing.T) {
+	// var i uintptr
+	//  cannot use &j (type *uint) as type uintptr in assignment
+	var i *uint
+	var j uint = 3
+	i = &j
+	log.Println(i)
+	log.Println(&i)
+	log.Println(*i)
+}
+
+type Duck interface {
+	Quack()
+	SetName(string)
+}
+type Rubber struct {
+	name string
+}
+
+func (r *Rubber) Quack() {
+	log.Println(r.name)
+}
+
+func (r *Rubber) SetName(s string) {
+	r.name = s
+}
+
+func TestInterfaceStruct(t *testing.T) {
+	var d Duck = &Rubber{name: "hi"}
+	d.SetName("hai")
+	// if comment SetName related codes
+	// will raise a compile error
+	// *Rubber does not implement Duck (missing SetName method)
+	d.Quack()
+}

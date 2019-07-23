@@ -1,6 +1,8 @@
 package basic
 
 import (
+	"log"
+	"reflect"
 	"testing"
 )
 
@@ -45,4 +47,32 @@ func TestUpdate(t *testing.T) {
 func TestDelete(t *testing.T) {
 	d := Dictionay{"test": "this is a test"}
 	d.Delete("test")
+}
+
+// test map keys by using interface{} as key & value
+func TestMapKeys(t *testing.T) {
+	m := map[interface{}]interface{}{}
+	m[1] = 1
+	m["s"] = "s"
+	m[0.3] = 0.3
+	// m[[]int{1, 2, 3}] = []int{1, 2, 3}
+	// panic: runtime error: hash of unhashable type []int
+	for k, v := range m {
+		switch k.(type) {
+		case int:
+			log.Println(k.(int), v.(int))
+		case string:
+			log.Println(k.(string), v.(string))
+		default:
+			log.Println("unknown type: ", reflect.TypeOf(k).String())
+		}
+	}
+}
+
+func TestMapLen(t *testing.T) {
+	m := make(map[interface{}]interface{}, 20)
+	m[1] = 1
+	m["s"] = "s"
+	m[0.3] = 0.3
+	log.Println(len(m))
 }

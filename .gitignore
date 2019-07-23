@@ -12,3 +12,6 @@
 # ignore data
 *.in
 *.out
+
+# ignore go.sum 
+go.sum

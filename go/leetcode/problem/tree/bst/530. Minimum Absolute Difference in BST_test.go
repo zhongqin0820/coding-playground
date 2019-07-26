@@ -22,6 +22,7 @@ import (
  */
 func getMinimumDifference(root *TreeNode) int {
 	res, pre := math.MaxInt32, -1
+
 	var in func(*TreeNode)
 	in = func(node *TreeNode) {
 		if node == nil {
@@ -34,6 +35,7 @@ func getMinimumDifference(root *TreeNode) int {
 		pre = node.Val
 		in(node.Right)
 	}
+
 	in(root)
 	return res
 }

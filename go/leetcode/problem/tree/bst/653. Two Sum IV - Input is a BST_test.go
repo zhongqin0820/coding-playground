@@ -23,7 +23,7 @@ func findTarget(root *TreeNode, k int) bool {
 	if root == nil {
 		return false
 	}
-	// inorder traverse
+	// inorder traverse 将BST遍历得到生序序列匹配另一个值target = k-node.Val
 	var in func(*TreeNode, int) bool
 	in = func(node *TreeNode, target int) bool {
 		if node == nil {

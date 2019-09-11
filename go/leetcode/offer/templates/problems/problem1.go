@@ -9,7 +9,6 @@ import (
 	"strings"
 )
 
-// replace the inputs & output
 func problem1(A, B []int) []int {
 	res := []int{}
 	return res
@@ -45,6 +44,6 @@ func input1() ([]int, []int) {
 	return A, B
 }
 
-func main() {
-	problemWrapper1()
-}
+// func main() {
+// 	problemWrapper1()
+// }

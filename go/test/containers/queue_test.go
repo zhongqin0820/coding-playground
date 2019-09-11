@@ -21,50 +21,18 @@ func (this *MyDeQueue) PushFront(x int) {
 	this.s2.PushBack(x)
 }
 
-/** Removes the element from the front of queue and returns that element. */
-func (this *MyDeQueue) PopFront() int {
-	if this.s2.Len() == 0 {
-		for this.s1.Len() != 0 {
-			this.s2.PushBack(this.s1.Remove(this.s1.Back()))
-		}
-	}
-	if this.s2.Len() == 0 {
-		return -1
-	}
-	res := this.s2.Back().Value.(int)
-	this.s2.Remove(this.s2.Back())
-	return res
-}
-
 /** Push element x to the back of queue. */
 func (this *MyDeQueue) PushBack(x int) {
 	this.s1.PushBack(x)
 }
 
-/** Removes the element from the back of queue and returns that element. */
-func (this *MyDeQueue) PopBack() int {
-	if this.s1.Len() == 0 {
-		for this.s2.Len() != 0 {
-			this.s1.PushBack(this.s2.Remove(this.s2.Back()))
-		}
-	}
-	if this.s1.Len() == 0 {
-		return -1
-	}
-	res := this.s1.Back().Value.(int)
-	this.s1.Remove(this.s1.Back())
-	return res
-}
-
 /** Get the front element. */
 func (this *MyDeQueue) Front() int {
-	if this.s2.Len() == 0 {
-		for this.s1.Len() != 0 {
-			this.s2.PushBack(this.s1.Remove(this.s1.Back()))
-		}
+	if this.Empty() {
+		return -1
 	}
 	if this.s2.Len() == 0 {
-		return -1
+		return this.Back()
 	}
 	res := this.s2.Back().Value.(int)
 	return res
@@ -72,15 +40,39 @@ func (this *MyDeQueue) Front() int {
 
 /** Get the back element. */
 func (this *MyDeQueue) Back() int {
-	if this.s1.Len() == 0 {
-		for this.s2.Len() != 0 {
-			this.s1.PushBack(this.s2.Remove(this.s2.Back()))
-		}
-	}
-	if this.s1.Len() == 0 {
+	if this.Empty() {
 		return -1
 	}
+	if this.s1.Len() == 0 {
+		return this.Front()
+	}
 	res := this.s1.Back().Value.(int)
+	return res
+}
+
+/** Removes the element from the front of queue and returns that element. */
+func (this *MyDeQueue) PopFront() int {
+	if this.Empty() {
+		return -1
+	}
+	if this.s2.Len() == 0 {
+		return this.PopBack()
+	}
+	res := this.s2.Back().Value.(int)
+	this.s2.Remove(this.s2.Back())
+	return res
+}
+
+/** Removes the element from the back of queue and returns that element. */
+func (this *MyDeQueue) PopBack() int {
+	if this.Empty() {
+		return -1
+	}
+	if this.s1.Len() == 0 {
+		return this.PopFront()
+	}
+	res := this.s1.Back().Value.(int)
+	this.s1.Remove(this.s1.Back())
 	return res
 }
 

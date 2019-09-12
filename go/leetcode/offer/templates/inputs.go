@@ -102,3 +102,40 @@ func Input2(s string) ([]int, []int) {
 
 	return A, B
 }
+
+// 未知行数，未知列数，列间以空格
+func Input3(s string) [][]int {
+	var input io.Reader
+	if len(s) == 0 {
+		input = os.Stdin
+	} else {
+		input = strings.NewReader(s)
+	}
+	reader := bufio.NewReader(input)
+	scanner := bufio.NewScanner(reader)
+	MAXLEN := 1024
+	A := make([][]int, 0, MAXLEN)
+	var i int
+	for scanner.Scan() {
+		s := scanner.Text()
+		if len(s) == 0 || s == "\n" {
+			break
+		}
+		tempS := strings.Split(strings.TrimRight(s, " "), " ")
+		if len(tempS) == 0 {
+			break
+		}
+		temp := []int{}
+		for _, v := range tempS {
+			num, _ := strconv.Atoi(v)
+			temp = append(temp, num)
+
+		}
+		i++
+		A = append(A, temp)
+	}
+	if err := scanner.Err(); err != nil {
+		fmt.Printf("Invalid input: %s", err)
+	}
+	return A
+}

@@ -70,3 +70,30 @@ func TestInput2(t *testing.T) {
 		})
 	}
 }
+
+func TestInput3(t *testing.T) {
+	tests := []struct {
+		input   string
+		output1 [][]int
+	}{
+		{`2 0 0 1
+0 1 0 1
+1 0 0 0
+3 0 1 0
+`,
+			[][]int{
+				[]int{2, 0, 0, 1},
+				[]int{0, 1, 0, 1},
+				[]int{1, 0, 0, 0},
+				[]int{3, 0, 1, 0},
+			},
+		},
+	}
+	for i, ts := range tests {
+		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
+			ast := assert.New(t)
+			output1 := Input3(ts.input)
+			ast.Equal(ts.output1, output1)
+		})
+	}
+}

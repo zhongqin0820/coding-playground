@@ -39,6 +39,29 @@ func coinChange(coins []int, amount int) int {
 	return dp[amount]
 }
 
+// dp[0] = 0 // dp[i] 表示组成金额为i的最少硬币数
+// dp[i] = amount + 1
+// dp[i] = min(dp[i], dp[i-coins[j]] + 1)
+func coinChangeII(coins []int, amount int) int {
+	if amount == 0 || coins == nil || len(coins) == 0 {
+		return 0
+	}
+	dp := make([]int, amount+1)
+	dp[0] = 0
+	for i := 1; i < amount+1; i++ {
+		dp[i] = amount + 1
+		for _, coin := range coins {
+			if i-coin >= 0 && dp[i] > dp[i-coin]+1 {
+				dp[i] = dp[i-coin] + 1
+			}
+		}
+	}
+	if dp[amount] > amount {
+		return -1
+	}
+	return dp[amount]
+}
+
 func TestCoinChange(t *testing.T) {
 	tests := []struct {
 		coins  []int
@@ -53,6 +76,7 @@ func TestCoinChange(t *testing.T) {
 		t.Run(fmt.Sprintf("Example %d", i+1), func(t *testing.T) {
 			ast := assert.New(t)
 			ast.Equal(ts.output, coinChange(ts.coins, ts.amount))
+			ast.Equal(ts.output, coinChangeII(ts.coins, ts.amount))
 		})
 	}
 }

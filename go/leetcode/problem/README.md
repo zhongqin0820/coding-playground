@@ -24,10 +24,20 @@
         - 其它样例
 - 进入对应目录`go test .`
 
+## 相关博客
+- Grandyang: [LeetCode All in One 题目讲解汇总](https://www.cnblogs.com/grandyang/p/4606334.html)
+- 花花酱LeetCode
+    - [文字](https://zxi.mytechroad.com/blog/)博客
+    - [Bilibili](https://space.bilibili.com/9880352/channel/index)频道
+
 ## 相关Repo
-- [aQuaYi/LeetCode-in-Go](https://github.com/aQuaYi/LeetCode-in-Go): 参考答案仓库
-- [stretchr/testify](https://github.com/stretchr/testify): 测试包
-- [CyC2018/CS-Notes/notes/Leetcode 题解](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3.md)
+### 题解
+- [aQuaYi/LeetCode-in-Go](https://github.com/aQuaYi/LeetCode-in-Go): Golang
+- [CyC2018/CS-Notes/notes/Leetcode 题解](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3.md): Java
+- [algorhythms/LeetCode](https://github.com/algorhythms/LeetCode): Python
+
+### 包
+- [stretchr/testify](https://github.com/stretchr/testify): 测试
 
 # 链接
 - [LeetCode](https://leetcode.com/problemset/algorithms/)问题集

@@ -1,0 +1,82 @@
+.clear {
+    clear: both
+}
+
+#main {
+    clear: both;
+    position: relative;
+    box-shadow: 5px 5px 8px #888;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#main h2 {
+    line-height: 30px;
+    font-size: 17px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#main h2 em {
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+#book {
+    display: table;
+    width: 100%;
+}
+
+#book h2 {
+    height: 16px;
+    margin: 0;
+    background: url(images/bookshelftop.jpg) no-repeat left top;
+    color: #000 !important;
+    background-size: cover;
+}
+
+#book ul {
+    float: left;
+    height: auto;
+    background: url(images/bookshelfmiddle.jpg) repeat-y left top;
+    margin-bottom: 0;
+    background-size: 100% 196px;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-padding-start: 0em;
+    padding: 0 5%;
+    width: 90%;
+}
+
+#book ul li {
+    list-style-type: none;
+    vertical-align: bottom;
+    width: 110px;
+    float: left;
+    margin: 17px 14px 0;
+    padding-bottom: 19px;
+}
+
+#book ul li a {
+    display: block;
+    height: 160px;
+    line-height: 160px;
+    position: relative;
+}
+
+#book ul li img {
+    width: 110px;
+    vertical-align: bottom;
+    box-shadow: 5px 0 6px #512301;
+    position: absolute;
+    bottom: 0;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+#book ul li img:hover {
+    -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.4);
+    -webkit-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0);
+}

@@ -53,7 +53,7 @@ function howodd {
             let res=$res+1
         fi
     done
-    echo "## $(echo "$res / $#" | bc -l )"
+    echo "## $(echo "scale=2; $res / $#" | bc -l )"
 }
 echo "----------- TEST CASE -----------"
 echo "howodd 42 6 7 9 33"

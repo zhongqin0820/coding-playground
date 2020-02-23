@@ -2,16 +2,11 @@
 root = true
 
 [*]
-end of line = lf
+end_of_line = lf
 insert_final_newline = true
-
-[*.{js,ts,py,go}]
 charset = utf-8
-
-[*.{py,go}]
 indent_style = space
 indent_size = 4
 
-[*.{js,ts}]
-indent_style = space
+[*.{js,ts,html}]
 indent_size = 2

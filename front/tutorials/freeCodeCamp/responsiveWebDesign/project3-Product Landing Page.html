@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Product Landing Page | Responsive Web Design Projects</title>
+  <style type="text/css">
+    #header {
+      position: fixed;
+      top: 0px;
+      display: flex;
+    }
+    #header img {
+      max-width: 50px;
+      height: auto;
+    }
+    @media (max-width: 300px) {
+      #header img {
+        max-width: 10px;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <img src="https://www.icohotlist.com/wp-content/themes/mediaani-framework/assets/images/logo-icohotlist.svg" alt="Brand" id="header-img">
+    <nav id="nav-bar">
+      <a href="#a" class="nav-link">Section A</a>
+      <a href="#b" class="nav-link">Section B</a>
+      <a href="#c" class="nav-link">Section C</a>
+    </nav>
+  </header>
+  <section id="a">
+    <h2>Section A.</h2>
+    <video width="320" height="240" controls id="video">
+      <source src="movie.mp4" type="video/mp4">
+    </video>
+  </section>
+  <section id="b">
+    <h2>Section B.</h2>
+    <form action="/https://www.freecodecamp.com/email-submit" id="form">
+      <label for="email">Email: </label>
+      <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+      <input type="submit" value="Submit" id="submit">
+    </form>
+  </section>
+  <section id="c">
+    <h2>Section C.</h2>
+  </section>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

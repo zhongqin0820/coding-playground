@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Survey Form | Responsive Web Design Projects</title>
+</head>
+
+<body id="main">
+  <h1 id="title">Survey Form</h1>
+  <p id="description">This is a survey form.</p>
+  <form action="/submit" id="survey-form">
+    <label for="name" id="name-label">Name: </label>
+    <input type="text" id="name" placeholder="Please enter your name" required>
+    <label for="email" id="email-label">Email: </label>
+    <input type="email" id="email" placeholder="Please enter your email" required>
+    <label for="number" id="number-label">Number: </label>
+    <input type="number" id="number" min="0" max="99999999999999" placeholder="Please enter your number" required>
+    <br>
+    <label for="dropdown">How many dogs do you have?</label>
+    <select name="dropdown" id="dropdown">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">>2</option>
+    </select>
+    <br>
+    <label for="radios">How many dogs do you think it is the optimized number?</label>
+    <fieldset id="radios">
+      <legend>Dogs number:</legend>
+      <input type="radio" name="radios" value="0"> 0
+      <input type="radio" name="radios" value="1"> 1
+      <input type="radio" name="radios" value="2"> 2
+      <input type="radio" name="radios" value="3"> >2
+    </fieldset>
+    <br>
+    <label for="boxes">Why people have dogs as their pets?</label>
+    <fieldset id="boxes">
+      <legend>Reasons:</legend>
+      <input type="checkbox" name="boxes" value="1"> For company.
+      <input type="checkbox" name="boxes" value="2"> For fun.
+      <input type="checkbox" name="boxes" value="3"> Nothing special.
+    </fieldset>
+    <br>
+    <label for="additional">Do you have any additional comments?</label>
+    <textarea name="additional" id="additional" cols="30" rows="10">Please enter your additional comments here.</textarea>
+    <br>
+    <input type="submit" id="submit" value="Submit">
+  </form>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>

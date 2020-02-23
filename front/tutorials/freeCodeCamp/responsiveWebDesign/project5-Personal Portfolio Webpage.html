@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio Webpage | Responsive Web Design Projects</title>
+  <style type="text/css">
+    section {
+      height: 100vh;
+    }
+    #navbar {
+      position: fixed;
+      top: 0px;
+    }
+    @media (min-width: 300px) {
+      section {
+        height: 100vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <navbar id="navbar">
+    <a href="#welcome-section">Welcome</a>
+    <a href="#projects">Project</a>
+    <a href="https://www.freecodecamp.org/zoking" id="profile-link" target="_blank">FreeCodeCamp</a>
+  </navbar>
+  <section id="welcome-section">
+    <h1>Welcome to my personal portfolio</h1>
+    Content here.
+  </section>
+  <section id="projects">
+    <h2 class="project-tile">Project 1</h2>
+    My project: <a href="/la">LA</a>
+    Content here.
+  </section>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

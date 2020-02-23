@@ -12,28 +12,31 @@ import (
 // Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
 
 func numIslands(grid [][]byte) int {
-	if grid == nil || len(grid) == 0 {
+	if grid == nil || len(grid) == 0 || len(grid[0]) == 0 {
 		return 0
 	}
-	m, n := len(grid), len(grid[0])
+	n, m := len(grid), len(grid[0])
+	dx, dy := [4]int{-1, 1, 0, 0}, [4]int{0, 0, -1, 1}
 	res := 0
-	directions := [][]int{{0, 1}, {0, -1}, {1, 0}, {-1, 0}}
-
-	var dfs func(int, int)
-	dfs = func(i, j int) {
-		if i < 0 || i >= m || j < 0 || j >= n || grid[i][j] == '0' {
-			return
-		}
-		grid[i][j] = '0'
-		for _, d := range directions {
-			dfs(i+d[0], j+d[1])
-		}
-	}
-
-	for i := 0; i < m; i++ {
-		for j := 0; j < n; j++ {
-			if grid[i][j] != '0' {
-				dfs(i, j)
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			if grid[i][j] == '1' {
+				// bfs one island and marked the nodes
+				q := make([][2]int, 1, n*m)
+				q[0] = [2]int{i, j}
+				grid[i][j] = '0'
+				for idx := 0; idx < len(q); idx++ {
+					node := q[idx]
+					for k := 0; k < 4; k++ {
+						i_ := node[0] + dx[k]
+						j_ := node[1] + dy[k]
+						if i_ >= 0 && j_ >= 0 && i_ < n && j_ < m && grid[i_][j_] == '1' {
+							q = append(q, [2]int{i_, j_})
+							grid[i_][j_] = '0'
+						}
+					}
+				}
+				// add one island
 				res++
 			}
 		}

@@ -1,4 +1,6 @@
-all: clean README.md
+.PHONY: README.md
+
+all: README.md
 
 README.md:
 	echo "# [The Unix Workbench](https://seankross.com/the-unix-workbench) course assignment" > README.md

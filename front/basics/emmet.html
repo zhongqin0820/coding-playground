@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Emmet</title>
+</head>
+<body>
+  <!-- 生成子元素 -->
+  <!-- div>p -->
+  <div>
+    <p></p>
+  </div>
+  <!-- 生成兄弟元素 -->
+  <!-- div+p -->
+  <div></div>
+  <p></p>
+  <!-- 生成多个相同元素 -->
+  <!-- ul>li*5 -->
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <!-- 使用分组，生成多个相同分组 -->
+  <!-- ul>(li>img+p)*2 -->
+  <ul>
+    <li>
+      <img src="" alt="">
+      <p></p>
+    </li>
+    <li>
+      <img src="" alt="">
+      <p></p>
+    </li>
+  </ul>
+  <!-- 生成元素内容 -->
+  <!-- p{This is the content} -->
+  <p>This is the content</p>
+  <!-- 使用$配合生成带序列号的元素 -->
+  <!-- ul>li{item. $}*3 -->
+  <ul>
+    <li>item. 1</li>
+    <li>item. 2</li>
+    <li>item. 3</li>
+  </ul>
+  <!-- 使用$占位符配合生成带有格式的序列号 -->
+  <!-- ul>li{no. $$}*3 -->
+  <ul>
+    <li>no. 01</li>
+    <li>no. 02</li>
+    <li>no. 03</li>
+  </ul>
+  <!-- 使用@配合生成指定起始位置的序列号 -->
+  <!-- ul>li{no. $$@2}*3 -->
+  <ul>
+    <li>no. 02</li>
+    <li>no. 03</li>
+    <li>no. 04</li>
+  </ul>
+  <!-- 使用#生成元素的id -->
+  <!-- p#content -->
+  <p id="content"></p>
+  <!-- 使用.生成元素的class -->
+  <!-- p.text -->
+  <p class="text"></p>
+  <!-- 使用[]编辑元素的属性，空格间隔多个属性 -->
+  <!-- a[href=https://google.com id=url class=link] -->
+  <a href="https://google.com" id="url" class="link"></a>
+</body>
+</html>

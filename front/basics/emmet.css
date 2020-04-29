@@ -1,0 +1,99 @@
+/* 单位 */
+/* 数字表示: px */
+/* 加后缀p: % */
+/* 加后缀e: em */
+/* 加后缀x: ex */
+
+/* w100 */
+width: 100px;
+/* h100 */
+height: 100px;
+
+/* m0 */
+margin: 0;
+/* p10-20 */
+padding: 10px 20px;
+/* p10-a */
+padding: 10px auto;
+
+/* bd+ */
+border: 1px solid #000;
+/* bb+ */
+border-bottom: 1px solid #000;
+
+/* posa */
+position: absolute;
+/* posf */
+position: fixed;
+/* t10 */
+top: 10px;
+/* l10 */
+left: 10px;
+/* z1000 */
+z-index: 1000;
+
+/* bgc */
+background-color: #fff;
+/* bgi */
+background-image: url();
+/* bgr */
+background-repeat: ;
+/* bgs */
+-webkit-background-size: ;
+background-size: ;
+
+/* flr */
+float: right;
+/* fl */
+float: left;
+/* cl */
+clear: both;
+/* vv */
+visibility: visible;
+/* ovh */
+overflow: hidden;
+
+/* trftx */
+-webkit-transform: translateX(x);
+-ms-transform: translateX(x);
+-o-transform: translateX(x);
+transform: translateX(x);
+/* trfty */
+-webkit-transform: translateY(y);
+-ms-transform: translateY(y);
+-o-transform: translateY(y);
+transform: translateY(y);
+/* trfr */
+-webkit-transform: rotate(angle);
+-ms-transform: rotate(angle);
+-o-transform: rotate(angle);
+transform: rotate(angle);
+
+/* db */
+display: block;
+/* dib */
+display: inline-block;
+/* di */
+display: inline;
+/* df */
+display: -webkit-flex;
+display: -moz-flex;
+display: -ms-flex;
+display: -o-flex;
+display: flex;
+
+/* jcc */
+justify-content: center;
+/* jcsb */
+justify-content: space-between;
+
+/* aic */
+-ms-align-items: center;
+align-items: center;
+
+/* fxww */
+-webkit-flex-wrap: wrap;
+-moz-flex-wrap: wrap;
+-ms-flex-wrap: wrap;
+-o-flex-wrap: wrap;
+flex-wrap: wrap;
